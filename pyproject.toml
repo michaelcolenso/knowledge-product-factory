@@ -1,27 +1,63 @@
 [build-system]
-requires = ["setuptools>=68", "wheel"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [project]
 name = "kpf"
 version = "0.1.0"
-description = "Knowledge Product Factory CLI"
+description = "Knowledge Product Factory - A CLI-driven, schema-first, multi-agent system for creating info products"
 readme = "README.md"
 requires-python = ">=3.12"
+license = {text = "MIT"}
+authors = [
+    {name = "KPF Team"}
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+]
 dependencies = [
-  "typer>=0.12.3",
-  "pydantic>=2.8.0",
-  "rich>=13.7.0",
-  "jinja2>=3.1.4"
+    "typer>=0.12.0",
+    "pydantic>=2.0.0",
+    "jinja2>=3.1.0",
+    "rich>=13.0.0",
+    "python-dotenv>=1.0.0",
+    "orjson>=3.9.0",
+    "markdown>=3.5.0",
+]
+
+[project.optional-dependencies]
+openai = ["openai>=1.0.0"]
+anthropic = ["anthropic>=0.18.0"]
+gemini = ["google-generativeai>=0.3.0"]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=4.0.0",
+    "ruff>=0.2.0",
+    "mypy>=1.8.0",
 ]
 
 [project.scripts]
 kpf = "kpf.main:app"
 
-[tool.pytest.ini_options]
-pythonpath = ["."]
-testpaths = ["tests"]
+[tool.ruff]
+line-length = 100
+target-version = "py312"
 
-[tool.setuptools.packages.find]
-include = ["kpf*"]
-exclude = ["runs*", "briefs*", "products*", "tests*"]
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP", "B", "C4", "SIM"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
