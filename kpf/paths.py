@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import UTC, datetime
 from pathlib import Path
 from kpf.settings import settings
 
@@ -14,5 +14,5 @@ def get_runs_root() -> Path:
 
 def create_run_dir(mode: str, niche: str | None = None) -> Path:
     slug = (niche or mode).lower().replace(" ", "_").replace("/", "_")[:40]
-    stamp = datetime.utcnow().strftime("%Y-%m-%d_%H%M%S")
+    stamp = datetime.now(UTC).strftime("%Y-%m-%d_%H%M%S")
     return ensure_path(get_runs_root() / f"{stamp}_{slug}")
