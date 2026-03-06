@@ -1,0 +1,19 @@
+{
+  "run_id": "2026-03-06_kpf-discovery-bootstrap",
+  "mode": "discover",
+  "niche": "knowledge product niche discovery",
+  "target_audience": "solo operators validating knowledge-product opportunities",
+  "constraints": {
+    "max_creation_weeks": 3,
+    "allowed_formats": [
+      "playbook",
+      "template_library",
+      "notion_system",
+      "checklist_pack"
+    ],
+    "price_floor": 79,
+    "price_ceiling": 199
+  },
+  "strict_mode": true,
+  "with_personalization": false
+}
