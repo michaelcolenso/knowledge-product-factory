@@ -24,6 +24,26 @@ def _build_adapter(model: str, dry_run: bool):
     return get_adapter(model, settings)
 
 
+def _run_with_orchestrator(config: RunConfig, model: str, dry_run: bool, orchestrator: str) -> PipelineState:
+    """Run pipeline via the specified orchestrator."""
+    if orchestrator == "agent":
+        import os
+        settings = get_settings()
+        # Support both KPF_ANTHROPIC_API_KEY and the standard ANTHROPIC_API_KEY
+        api_key = settings.anthropic_api_key or os.environ.get("ANTHROPIC_API_KEY", "")
+        if not api_key:
+            console.print("[bold red]Error:[/bold red] Set ANTHROPIC_API_KEY or KPF_ANTHROPIC_API_KEY for --orchestrator agent")
+            raise typer.Exit(1)
+        inner_adapter = _build_adapter(model, dry_run)
+        from kpf.orchestrator.agent_orchestrator import AgentOrchestrator
+        orch = AgentOrchestrator(anthropic_api_key=api_key, inner_adapter=inner_adapter)
+        return orch.run(config)
+    else:
+        adapter = _build_adapter(model, dry_run)
+        engine = PipelineEngine()
+        return engine.run(config, adapter)
+
+
 def _display_result(state: PipelineState) -> None:
     console.print(f"\n[bold green]Run complete:[/bold green] {state.run_id}")
     if state.run_dir:
@@ -60,6 +80,7 @@ def validate(
     temperature: float = typer.Option(0.2, "--temperature", "-t"),
     dry_run: bool = typer.Option(False, "--dry-run"),
     strict: bool = typer.Option(True, "--strict/--no-strict", help="Enforce strict gates"),
+    orchestrator: str = typer.Option("engine", "--orchestrator", "-o", help="Orchestrator: engine (default) or agent"),
 ) -> None:
     """Validate a specific niche with spending, pain, and opportunity scoring."""
     configure_root_logger()
@@ -75,9 +96,7 @@ def validate(
             price_ceiling=price_ceiling,
         ),
     )
-    adapter = _build_adapter(model, dry_run)
-    engine = PipelineEngine()
-    state = engine.run(config, adapter)
+    state = _run_with_orchestrator(config, model, dry_run, orchestrator)
     _display_result(state)
 
 
@@ -145,6 +164,7 @@ def full(
     temperature: float = typer.Option(0.2, "--temperature", "-t"),
     dry_run: bool = typer.Option(False, "--dry-run"),
     strict: bool = typer.Option(True, "--strict/--no-strict"),
+    orchestrator: str = typer.Option("engine", "--orchestrator", "-o", help="Orchestrator: engine (default) or agent"),
 ) -> None:
     """Run the complete pipeline from validation through launch."""
     configure_root_logger()
@@ -163,7 +183,5 @@ def full(
             allowed_formats=format_list,
         ),
     )
-    adapter = _build_adapter(model, dry_run)
-    engine = PipelineEngine()
-    state = engine.run(config, adapter)
+    state = _run_with_orchestrator(config, model, dry_run, orchestrator)
     _display_result(state)
