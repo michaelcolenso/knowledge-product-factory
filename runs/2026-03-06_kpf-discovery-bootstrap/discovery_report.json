@@ -1,0 +1,11 @@
+{
+  "niches": [
+    {
+      "name": "therapist insurance credentialing",
+      "audience": "private practice therapists",
+      "problem_summary": "Credentialing delays hurt cash flow and create payer onboarding confusion.",
+      "format_fit": "playbook",
+      "feasible_in_weeks": 3
+    }
+  ]
+}
