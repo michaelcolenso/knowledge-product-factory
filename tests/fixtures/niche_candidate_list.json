@@ -1,0 +1,18 @@
+{
+  "candidates": [
+    {
+      "niche_name": "therapist insurance credentialing",
+      "community": "r/therapists",
+      "spending_hypothesis": "Therapists pay $2,000-$5,000 to consultants for credentialing help",
+      "information_gap_hypothesis": "No clear guide exists for which panels to join first and in what order",
+      "ai_leverage_theory": "AI can synthesize credentialing requirements across 20+ panels quickly",
+      "recommended_format": "playbook",
+      "confidence": "high",
+      "validation_queries": [
+        "site:reddit.com/r/therapists credentialing consultant cost",
+        "site:reddit.com/r/therapists CAQH setup help",
+        "therapist insurance panel credentialing guide 2024"
+      ]
+    }
+  ]
+}

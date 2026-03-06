@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "checks": {
+    "draft_exists": true,
+    "sufficient_artifacts": true,
+    "package_manifest_exists": true,
+    "has_target_user": true,
+    "has_distribution": true,
+    "has_price": true
+  },
+  "issues": [],
+  "required_revisions": []
+}

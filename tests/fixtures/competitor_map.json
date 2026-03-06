@@ -1,0 +1,37 @@
+{
+  "niche": "therapist insurance credentialing",
+  "alternatives": [
+    {
+      "name": "Credentialing consultants",
+      "category": "consultant",
+      "price": "$1,500-$5,000",
+      "weaknesses": [
+        "Expensive for new therapists with no revenue yet",
+        "Still requires you to gather all documents yourself",
+        "Doesn't teach you the process for future re-credentialing"
+      ]
+    },
+    {
+      "name": "YouTube tutorials",
+      "category": "free",
+      "price": "Free",
+      "weaknesses": [
+        "Outdated - insurance requirements change frequently",
+        "Generic, not specific to your state or specialty",
+        "No way to ask follow-up questions"
+      ]
+    },
+    {
+      "name": "State therapist association resources",
+      "category": "free",
+      "price": "Free with membership ($100-$300/year)",
+      "weaknesses": [
+        "PDFs that haven't been updated since 2019",
+        "No step-by-step process, just general information",
+        "Assumes you know the basic terminology"
+      ]
+    }
+  ],
+  "market_gap_summary": "No resource exists that provides a specific, current, step-by-step credentialing process for therapists that covers CAQH setup, panel selection strategy, application timing, and follow-up protocols",
+  "switching_reason": "A $97 guide that saves one credentialing rejection ($8,000 loss) pays for itself 80x over"
+}

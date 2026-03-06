@@ -1,0 +1,17 @@
+{
+  "product_name": "Therapist Insurance Panel Accelerator",
+  "version": "1.0",
+  "tier": "Complete",
+  "included_files": [
+    "insurance_credentialing_playbook.md",
+    "caqh_setup_checklist.md",
+    "panel_selection_matrix.csv",
+    "followup_email_templates.md"
+  ],
+  "delivery_notes": [
+    "Start with the CAQH Setup Checklist before reading the main guide",
+    "Have your NPI number, DEA certificate, and malpractice insurance docs ready",
+    "Use the Panel Selection Matrix to choose your first 5-7 panels before applying",
+    "Set a calendar reminder to attest your CAQH profile every 90 days"
+  ]
+}

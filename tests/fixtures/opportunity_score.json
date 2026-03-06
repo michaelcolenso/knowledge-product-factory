@@ -1,0 +1,19 @@
+{
+  "scores": {
+    "spending_clarity": 5,
+    "information_gap": 5,
+    "urgency": 4,
+    "create_feasibility": 4,
+    "ai_multiplier": 4
+  },
+  "total": 22,
+  "decision": "CREATE",
+  "confidence": "high",
+  "justification": {
+    "spending_clarity": "Multiple quantified dollar amounts: $2,500 consultant fees, $8,000 in delayed revenue from rejections",
+    "information_gap": "Specific recurring question about panel selection order with no good answer available",
+    "urgency": "Revenue loss consequence is real but not immediate - therapists can survive without insurance initially",
+    "create_feasibility": "Process documentation is public, CAQH steps are learnable, achievable in 2-3 weeks",
+    "ai_multiplier": "AI can synthesize panel requirements, format checklists, and draft step-by-step guides quickly"
+  }
+}

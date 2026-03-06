@@ -1,0 +1,39 @@
+# {{ brief.opportunity_name }}
+
+## {{ brief.core_promise }}
+
+---
+
+**Who this is for:** {{ brief.target_user }}
+
+---
+
+## What You Get
+
+{% for item in brief.deliverables %}
+- {{ item }}
+{% endfor %}
+
+---
+
+## Why This Exists
+
+{{ pain_summary }}
+
+---
+
+## What Makes This Different
+
+{{ brief.differentiator }}
+
+---
+
+## Investment
+
+**{{ brief.price | default('$97') }}** — one-time payment, instant download.
+
+[Get Instant Access →]
+
+---
+
+*Questions? Check the FAQ below.*

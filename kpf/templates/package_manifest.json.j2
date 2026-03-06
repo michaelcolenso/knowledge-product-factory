@@ -1,0 +1,11 @@
+{
+  "product_name": "{{ manifest.product_name }}",
+  "version": "{{ manifest.version }}",
+  "tier": "{{ manifest.tier }}",
+  "included_files": [
+    {% for f in manifest.included_files %}"{{ f }}"{% if not loop.last %},{% endif %}{% endfor %}
+  ],
+  "delivery_notes": [
+    {% for note in manifest.delivery_notes %}"{{ note }}"{% if not loop.last %},{% endif %}{% endfor %}
+  ]
+}

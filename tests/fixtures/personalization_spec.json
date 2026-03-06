@@ -1,0 +1,19 @@
+{
+  "input_fields": [
+    "practice_state",
+    "specialization",
+    "target_panels",
+    "npi_status"
+  ],
+  "generation_logic": [
+    "If practice_state=CA, include DMHC and Covered California requirements",
+    "If specialization=substance_abuse, highlight CARF accreditation requirements",
+    "Filter panel matrix to show only panels available in practice_state"
+  ],
+  "outputs": [
+    "State-specific compliance checklist",
+    "Personalized panel priority list based on state and specialty",
+    "Customized timeline based on target_panels count"
+  ],
+  "update_strategy": "Re-run personalization when practice_state changes or adding new panel types"
+}

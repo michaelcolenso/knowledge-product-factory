@@ -1,0 +1,34 @@
+{
+  "niche": "therapist insurance credentialing",
+  "facts": [
+    {
+      "claim": "CAQH credentialing takes 60-90 days for panel approval - apply to 5+ panels simultaneously",
+      "support": "Multiple therapist reports on r/therapists showing 2-4 month typical timelines",
+      "confidence": "high"
+    },
+    {
+      "claim": "Attestation must be completed every 120 days or your CAQH profile becomes inactive",
+      "support": "CAQH official documentation and confirmed by multiple credentialing consultants",
+      "confidence": "high"
+    },
+    {
+      "claim": "BCBS, Aetna, and Cigna typically have the fastest credentialing timelines (45-60 days)",
+      "support": "Therapist community reports; varies by state",
+      "confidence": "medium"
+    }
+  ],
+  "decisions": [
+    "Which 5-7 panels to apply to first based on state prevalence and timeline",
+    "Whether to apply to Medicare and Medicaid (lower rates but high patient volume)",
+    "When to start marketing before credentialing is complete"
+  ],
+  "pitfalls": [
+    "Applying to only 1-2 panels initially delays revenue by 6+ months",
+    "Forgetting CAQH attestation causes profile to go inactive mid-application",
+    "Not authorizing specific panels to access CAQH data before submitting applications"
+  ],
+  "contradictions": [
+    "Some sources say apply to Medicare first, others say apply to commercial panels first - depends on your patient population",
+    "Credentialing timelines vary significantly by state; national averages are not reliable"
+  ]
+}

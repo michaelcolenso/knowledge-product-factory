@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "name": "CAQH Setup Checklist",
+      "file_name": "caqh_setup_checklist.md",
+      "purpose": "Step-by-step guide for completing CAQH profile without errors",
+      "format": "md"
+    },
+    {
+      "name": "Panel Selection Matrix",
+      "file_name": "panel_selection_matrix.csv",
+      "purpose": "Compare 25 insurance panels by timeline, reimbursement rates, and requirements",
+      "format": "csv"
+    },
+    {
+      "name": "Follow-up Email Templates",
+      "file_name": "followup_email_templates.md",
+      "purpose": "Copy-paste emails for following up with insurance companies",
+      "format": "md"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "core_question": "Which insurance panels should I apply to first, and in what order, to maximize revenue in my first year of private practice?",
+  "patterns": [
+    {
+      "type": "information_gap",
+      "quote": "I have no idea which panels are even worth applying to in my state",
+      "frequency_estimate": 50
+    },
+    {
+      "type": "time_loss",
+      "quote": "I spent 6 hours on CAQH and still don't know if I did it right",
+      "frequency_estimate": 80
+    },
+    {
+      "type": "money_risk",
+      "quote": "My application was rejected and I lost 3 months of potential insurance revenue",
+      "frequency_estimate": 30
+    }
+  ],
+  "current_workarounds": [
+    "Hire expensive credentialing consultants ($1,500-$5,000)",
+    "Ask colleagues who may have outdated information",
+    "Call insurance companies directly (hours of hold time)",
+    "Search Reddit for scattered advice"
+  ],
+  "time_wasted": "3-6 hours per panel application, plus 60-90 day wait times",
+  "money_risked": "$5,000-$10,000 in delayed revenue per rejected application",
+  "emotional_state": "Anxious about compliance errors, overwhelmed by bureaucracy, frustrated by lack of clear guidance",
+  "ideal_solution_language": "Step-by-step guide that tells me exactly what to do, in what order, with no gaps"
+}

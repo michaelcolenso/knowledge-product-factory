@@ -1,0 +1,37 @@
+{
+  "niche": "therapist insurance credentialing",
+  "signals": [
+    {
+      "community": "r/therapists",
+      "quote": "Just paid $2,500 for a credentialing consultant. Took 4 months. Worth every penny but wish I had a guide.",
+      "purchase_type": "consultant",
+      "amount_usd": 2500,
+      "time_cost": "4 months delay",
+      "job_to_be_done": "Get credentialed with insurance panels to start seeing clients",
+      "satisfaction": "frustrated",
+      "date": "2024-01"
+    },
+    {
+      "community": "r/therapists",
+      "quote": "Spent 3 hours trying to figure out the CAQH setup. Finally called my state association.",
+      "purchase_type": "time",
+      "amount_usd": null,
+      "time_cost": "3 hours",
+      "job_to_be_done": "Complete CAQH profile correctly",
+      "satisfaction": "frustrated",
+      "date": "2024-02"
+    },
+    {
+      "community": "Private Practice Boot Camp Facebook",
+      "quote": "My credentialing got rejected twice because I didn't know about the CAQH attestation timing. Lost $8,000 in delayed revenue.",
+      "purchase_type": "mistake",
+      "amount_usd": 8000,
+      "time_cost": "3 months",
+      "job_to_be_done": "Avoid credentialing rejection",
+      "satisfaction": "frustrated",
+      "date": "2024-03"
+    }
+  ],
+  "signal_count": 3,
+  "passes_threshold": true
+}

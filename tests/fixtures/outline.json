@@ -1,0 +1,38 @@
+{
+  "product_title": "Therapist Insurance Panel Accelerator: Get Credentialed in 90 Days",
+  "sections": [
+    {
+      "title": "Before You Start: What You Actually Need",
+      "goal": "Gather all required documents before touching CAQH",
+      "bullets": [
+        "The 12 documents every panel application requires",
+        "How to get your NPI number if you don't have one yet",
+        "DEA certificate: required or not depending on your scope",
+        "Malpractice insurance: minimum coverage amounts by panel"
+      ],
+      "artifacts_referenced": ["CAQH Setup Checklist"]
+    },
+    {
+      "title": "CAQH Setup: The Foundation Everything Else Builds On",
+      "goal": "Complete CAQH profile correctly the first time",
+      "bullets": [
+        "The 3 CAQH fields that cause the most rejections",
+        "Attestation timing: when to attest and how often",
+        "How to authorize specific panels to access your profile",
+        "What to do if your NPI is already in the system from a previous employer"
+      ],
+      "artifacts_referenced": ["CAQH Setup Checklist"]
+    },
+    {
+      "title": "Panel Selection Strategy: Which Ones First",
+      "goal": "Choose 5-7 panels to apply to simultaneously based on your situation",
+      "bullets": [
+        "The panels with fastest credentialing timelines (under 60 days)",
+        "Which panels pay the most for your specialty",
+        "Why you should apply to 7 panels even if you only want 3",
+        "State-specific considerations: which panels are dominant in your area"
+      ],
+      "artifacts_referenced": ["Panel Selection Matrix"]
+    }
+  ]
+}
