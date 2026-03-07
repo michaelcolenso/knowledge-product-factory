@@ -14,5 +14,5 @@ def get_runs_root() -> Path:
 
 def create_run_dir(mode: str, niche: str | None = None) -> Path:
     slug = (niche or mode).lower().replace(" ", "_").replace("/", "_")[:40]
-    stamp = datetime.now(UTC).strftime("%Y-%m-%d_%H%M%S")
+    stamp = datetime.now(UTC).strftime("%Y-%m-%d_%H%M%S_%f")
     return ensure_path(get_runs_root() / f"{stamp}_{slug}")

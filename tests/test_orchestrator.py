@@ -34,3 +34,19 @@ def test_full_mode_writes_expected_files():
     for e in expected:
         assert (state.run_dir / e).exists(), e
     assert (state.run_dir / "launch" / "sales_page.md").exists()
+
+
+def test_launch_mode_includes_discovery_phase():
+    state = run_pipeline(RunConfig(mode="launch", niche="therapist insurance credentialing"))
+    assert "discovery_report" in state.data
+    assert "product_brief" in state.data
+    assert "validation_report" in state.data
+    assert (state.run_dir / "launch" / "sales_page.md").exists()
+
+
+def test_build_mode_includes_discovery_and_stops_before_launch():
+    state = run_pipeline(RunConfig(mode="build", niche="therapist insurance credentialing"))
+    assert "discovery_report" in state.data
+    assert "package_manifest" in state.data
+    assert "validation_report" not in state.data
+    assert not (state.run_dir / "launch" / "sales_page.md").exists()
