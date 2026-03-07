@@ -25,13 +25,13 @@ def run_pipeline(config: RunConfig) -> OrchestratorState:
     state = initialize_state(config)
     state = _run("intake", state)
 
-    if not config.niche and config.mode in {"discover", "full"}:
+    if config.mode in {"discover", "validate", "build", "launch", "full"}:
         state = _run("discovery", state)
         if config.mode == "discover":
             append_run_record(state)
             return state
 
-    if config.mode in {"validate", "full"}:
+    if config.mode in {"validate", "build", "launch", "full"}:
         state = _run("spending", state)
         enforce_gate("spending", state)
         state = _run("pain", state)
@@ -43,7 +43,7 @@ def run_pipeline(config: RunConfig) -> OrchestratorState:
             append_run_record(state)
             return state
 
-    if config.mode in {"build", "full"}:
+    if config.mode in {"build", "launch", "full"}:
         state = _run("strategy", state)
         state = _run("outline", state)
         state = _run("synthesis", state)
@@ -52,14 +52,16 @@ def run_pipeline(config: RunConfig) -> OrchestratorState:
         if config.with_personalization:
             state = _run("personalization", state)
         state = _run("packaging", state)
-        state = _run("validation", state)
-        enforce_gate("validation", state)
         if config.mode == "build":
             append_run_record(state)
             return state
 
     if config.mode in {"launch", "full"}:
         state = _run("launch", state)
+        state = _run("validation", state)
+        enforce_gate("validation", state)
+
+    if config.mode == "full":
         state = _run("retrospective", state)
 
     append_run_record(state)
