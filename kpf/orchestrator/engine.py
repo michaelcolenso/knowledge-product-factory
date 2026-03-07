@@ -31,7 +31,10 @@ def run_pipeline(config: RunConfig) -> OrchestratorState:
             append_run_record(state)
             return state
 
-    if config.mode in {"validate", "full"}:
+    should_run_research = config.mode in {"validate", "full"} or (
+        config.mode == "build" and not config.brief
+    )
+    if should_run_research:
         state = _run("spending", state)
         enforce_gate("spending", state)
         state = _run("pain", state)
@@ -43,7 +46,10 @@ def run_pipeline(config: RunConfig) -> OrchestratorState:
             append_run_record(state)
             return state
 
-    if config.mode in {"build", "full"}:
+    should_run_build = config.mode in {"build", "full"} or (
+        config.mode == "launch" and not config.product
+    )
+    if should_run_build:
         state = _run("strategy", state)
         state = _run("outline", state)
         state = _run("synthesis", state)
