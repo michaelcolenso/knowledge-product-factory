@@ -1,4 +1,3 @@
-from pathlib import Path
 from kpf.orchestrator.engine import run_pipeline
 from kpf.schemas.run_config import RunConfig
 
@@ -34,3 +33,18 @@ def test_full_mode_writes_expected_files():
     for e in expected:
         assert (state.run_dir / e).exists(), e
     assert (state.run_dir / "launch" / "sales_page.md").exists()
+
+
+def test_build_mode_with_brief_skips_research_phase():
+    state = run_pipeline(RunConfig(mode="build", niche="from_brief", brief="briefs/example.json"))
+    assert "opportunity_score" not in state.data
+    assert "validation_report" in state.data
+    assert "launch_assets" not in state.data
+
+
+def test_launch_mode_with_product_skips_prelaunch_pipeline():
+    state = run_pipeline(RunConfig(mode="launch", niche="launch-product", product="products/example"))
+    assert "opportunity_score" not in state.data
+    assert "product_brief" not in state.data
+    assert "validation_report" not in state.data
+    assert "launch_assets" in state.data
